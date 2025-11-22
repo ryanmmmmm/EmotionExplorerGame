@@ -5,9 +5,9 @@ import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import { env } from './config/environment.js';
-import emotionsRouter from './routes/emotions.js';
-import { metricsHandler } from './monitoring/metrics.js';
+import { env } from './config/environment';
+import emotionsRouter from './routes/emotions';
+import { metricsHandler } from './monitoring/metrics';
 
 const app = express();
 
@@ -38,6 +38,8 @@ const startServer = () => {
   }
 };
 
-startServer();
+if (process.env.NODE_ENV !== 'test') {
+  startServer();
+}
 
 export default app;
