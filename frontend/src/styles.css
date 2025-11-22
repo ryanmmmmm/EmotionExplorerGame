@@ -1,0 +1,56 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: #0b1320;
+  color: #e9edf5;
+}
+
+.app {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1rem 1.5rem 2rem;
+}
+
+.app__content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.app__list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.app__list button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background: #162033;
+  color: inherit;
+  border: 1px solid #26334d;
+  cursor: pointer;
+}
+
+.app__list button.selected {
+  background: linear-gradient(135deg, #2d8cff, #7a5dff);
+  border-color: #7a5dff;
+}
+
+.app__details {
+  background: #121a2a;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #1e2a3d;
+}
+
+@media (max-width: 768px) {
+  .app__content {
+    grid-template-columns: 1fr;
+  }
+}

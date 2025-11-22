@@ -1,0 +1,23 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "emotion-explorer-api",
+      "image": "public.ecr.aws/docker/library/node:20-alpine",
+      "essential": true,
+      "memory": 256,
+      "portMappings": [
+        {
+          "containerPort": 4000,
+          "hostPort": 80
+        }
+      ],
+      "environment": [
+        { "name": "PORT", "value": "4000" },
+        { "name": "API_BASE_URL", "value": "/api" },
+        { "name": "PROMETHEUS_METRICS", "value": "true" }
+      ],
+      "command": ["node", "dist/index.js"]
+    }
+  ]
+}
