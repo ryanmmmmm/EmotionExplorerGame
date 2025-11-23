@@ -1,0 +1,20 @@
+* text=auto eol=lf
+
+# Treat lockfiles and generated assets as union merges to reduce manual conflict resolution
+package-lock.json merge=union
+npm-shrinkwrap.json merge=union
+yarn.lock merge=union
+pnpm-lock.yaml merge=union
+
+# Preserve binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.zip binary

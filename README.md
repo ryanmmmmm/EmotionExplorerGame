@@ -27,3 +27,8 @@ Environment variables live in `.env` (see `.env.example`). Frontend expects `VIT
 - **AWS Elastic Beanstalk:** Deploy with `backend/deployment/aws/Dockerrun.aws.json`, terminating TLS at the load balancer (ACM). CloudWatch and the `/metrics` endpoint enable monitoring.
 
 The frontend ships a service worker for caching and Vite code-splitting configuration with lazy-loaded UI components for better performance.
+
+## Merge conflict tips
+- The repo includes a `.gitattributes` that applies a union merge to common lockfiles to reduce churn when multiple contributors update dependencies.
+- Keep environment files (`.env`, `.env.local`) untracked and regenerate build outputs instead of merging generated artifacts.
+- If a conflict appears in compiled `dist` assets, prefer rebuilding locally from `ts`/`tsx` sources after resolving the merge.
