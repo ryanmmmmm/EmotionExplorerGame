@@ -1,0 +1,153 @@
+/**
+ * Companion Chat Button Styles
+ */
+
+.companion-chat-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9370db 0%, #7b68ee 100%);
+  box-shadow: 0 4px 20px rgba(147, 112, 219, 0.6);
+  cursor: pointer;
+  z-index: 1999;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.companion-chat-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(147, 112, 219, 0.8);
+}
+
+.companion-chat-button:active {
+  transform: scale(0.95);
+}
+
+.button-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147, 112, 219, 0.4) 0%, transparent 70%);
+  animation: buttonPulse 2s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+}
+
+.button-companion {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f0e6ff 0%, #d8c5ff 50%, #b19cd9 100%);
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+.button-companion::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 12px;
+  left: 12px;
+  box-shadow: 14px 0 0 #ffffff;
+}
+
+.button-companion::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #4a4a4a;
+  border-radius: 50%;
+  top: 14px;
+  left: 14px;
+  box-shadow: 14px 0 0 #4a4a4a;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.button-notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 14px;
+  height: 14px;
+  background: #ff4757;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.button-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  border: 6px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+.companion-chat-button:hover .button-tooltip {
+  opacity: 1;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .companion-chat-button {
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .button-companion {
+    width: 35px;
+    height: 35px;
+  }
+}
