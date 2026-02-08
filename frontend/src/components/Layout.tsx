@@ -19,6 +19,7 @@ const navItems = [
   { label: 'Mood Collage', to: '/mood-collage' },
   { label: 'Next Steps', to: '/next-steps' },
   { label: 'Guided Imagery', to: '/guided-imagery' },
+  { label: 'Emotion Explorer 3D', to: '/emotion-explorer-3d' },
 ];
 
 const ambient = new Howl({

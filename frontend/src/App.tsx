@@ -11,6 +11,7 @@ import IntentionsRipples from './components/IntentionsRipples';
 import MoodCollageStudio from './components/MoodCollageStudio';
 import NextStepsBridge from './components/NextStepsBridge';
 import GuidedImageryPlayer from './components/GuidedImageryPlayer';
+import EmotionExplorer3D from './components/EmotionExplorer3D';
 
 function Home() {
   return (
@@ -27,6 +28,7 @@ function Home() {
         'Collage Studio',
         'Next Steps Bridge',
         'Guided Imagery',
+        'Emotion Explorer 3D',
       ].map((item) => (
         <div className="panel" key={item} role="article" aria-label={`${item} preview`}>
           <h3>{item}</h3>
@@ -56,6 +58,7 @@ export default function App() {
         <Route path="/mood-collage" element={<MoodCollageStudio />} />
         <Route path="/next-steps" element={<NextStepsBridge />} />
         <Route path="/guided-imagery" element={<GuidedImageryPlayer />} />
+        <Route path="/emotion-explorer-3d" element={<EmotionExplorer3D />} />
       </Routes>
     </Layout>
   );
