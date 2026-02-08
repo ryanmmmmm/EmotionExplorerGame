@@ -44,9 +44,8 @@ export default function TrajectoriesScene() {
                   position: 'absolute',
                   inset: 0,
                   transform: `translateX(${(idx + 1) * 10}%)`,
-                  background: `linear-gradient(90deg, transparent, ${lane.color}, transparent)`
-                    repeat
-                    scroll,
+                  background: `linear-gradient(90deg, transparent, ${lane.color}, transparent)`,
+                  backgroundRepeat: 'repeat',
                   animation: 'slide 6s linear infinite',
                 }}
               />
